@@ -5,15 +5,21 @@
 
 *@
 <h2>Customers</h2>
-<table>
-    <thead>
-        <tr><td>1Name</td></tr>
-    </thead>
-    <tbody>
-        @foreach (var customer in Model)
-        {
-            <tr><td>@Html.ActionLink(customer.Name, "Details","Customers", new {id=customer.Id},null)</td></tr>
-        }
-        
-    </tbody>
-</table>
+@if (!Model.Any())
+{
+    <p>We don't have any customers</p>
+}
+else
+{
+    <table>
+        <thead>
+            <tr><td>1Name</td></tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in Model)
+            {
+                <tr><td>@Html.ActionLink(customer.Name, "Details","Customers", new {id=customer.Id},null)</td></tr>
+            }
+        </tbody>
+    </table>
+}

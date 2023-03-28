@@ -1,0 +1,19 @@
+﻿@model IEnumerable<vidly2.Models.Customer>
+@*
+   ViewData["Title"]="Customers";
+   Layout = "~/Views/Shared/_Layout.cshtml";
+
+*@
+<h2>Customers</h2>
+<table>
+    <thead>
+        <tr><td>Name</td></tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr><td>@Html.ActionLink(customer.Name, "Details","Customers", new {id=customer.Id},null)</td></tr>
+        }
+        
+    </tbody>
+</table>

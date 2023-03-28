@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\vidly2.props" />
+</Project>
